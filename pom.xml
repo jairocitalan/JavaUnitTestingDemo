@@ -38,8 +38,6 @@
 						<artifactId>junit-platform-surefire-provider</artifactId>
 						<version>${junit.platform.version}</version>
 					</dependency>
-
-
 				</dependencies>
 			</plugin>
 		</plugins>
@@ -70,6 +68,11 @@
 			<artifactId>junit-vintage-engine</artifactId>
 			<version>${junit.vintage.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
 		</dependency>
 	</dependencies>
 
