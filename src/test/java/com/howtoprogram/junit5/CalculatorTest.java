@@ -42,16 +42,17 @@ public class CalculatorTest {
 	  @DisplayName("Test con Mokito")
 	  public void testCalculatorMokito() {
 		  Calculator cal=mock(Calculator.class);
-		  when(cal.sumar(5, 2)).thenReturn(7);
+		  
+		  when(cal.sumar(3, 3)).thenReturn(6);
 		  assertEquals(6, cal.sumar(3, 3));
 		  
-		  when(cal.restar(4, 5)).thenReturn(9);
+		  when(cal.restar(4, 4)).thenReturn(8);
 		  assertEquals(8, cal.restar(4,4));
 		  
-		  when(cal.dividir(30, 3)).thenReturn(10);
+		  when(cal.dividir(12, 2)).thenReturn(6);
 		  assertEquals(6, cal.dividir(12, 2));
-		  
-		  when (cal.multiplicar(5, 5)).thenReturn(25);
+		 
+		  when (cal.multiplicar(30, 2)).thenReturn(60);
 		  assertEquals(60,cal.multiplicar(30, 2));
 			
 		  

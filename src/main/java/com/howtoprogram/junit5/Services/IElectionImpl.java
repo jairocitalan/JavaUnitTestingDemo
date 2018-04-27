@@ -9,7 +9,7 @@ public class IElectionImpl implements IElection{
 		}
 		
 		return "Elmer Homero";
-	}
+	}  
 
 	@Override
 	public int getNumberOfVotesByParty(String party) {

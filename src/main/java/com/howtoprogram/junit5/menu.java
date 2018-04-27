@@ -10,6 +10,6 @@ public class menu {
 		
 		int numOfVotes=election.getNumberOfVotesByParty("Axity");
 		
-		System.out.print(String.format(cadidatoName, numOfVotes));
+		System.out.print(String.format("%s %i",cadidatoName, numOfVotes));
 	}
 }
