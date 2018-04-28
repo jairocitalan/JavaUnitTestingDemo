@@ -43,17 +43,18 @@ public class CalculatorTest {
 	  public void testCalculatorMokito() {
 		  Calculator cal=mock(Calculator.class);
 		  
-		  when(cal.sumar(3, 3)).thenReturn(6);
-		  assertEquals(6, cal.sumar(3, 3));
+		  when(cal.sumar(20, 20)).thenReturn(80);
+		  assertEquals(80, cal.sumar(20, 20));
+	      System.out.println("suma chida;"+cal.sumar(20, 20));
 		  
-		  when(cal.restar(4, 4)).thenReturn(8);
-		  assertEquals(8, cal.restar(4,4));
+		  when(cal.restar(10, 5)).thenReturn(30);
+		  assertEquals(30, cal.restar(10,5));
 		  
-		  when(cal.dividir(12, 2)).thenReturn(6);
-		  assertEquals(6, cal.dividir(12, 2));
+		  when(cal.dividir(10, 5)).thenReturn(100);
+		  assertEquals(100, cal.dividir(10, 5));
 		 
-		  when (cal.multiplicar(30, 2)).thenReturn(60);
-		  assertEquals(60,cal.multiplicar(30, 2));
+		  when (cal.multiplicar(20, 2)).thenReturn(60);
+		  assertEquals(60,cal.multiplicar(20, 2));
 			
 		  
 		  
