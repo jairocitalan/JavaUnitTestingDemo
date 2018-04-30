@@ -5,39 +5,39 @@ import org.junit.jupiter.api.DisplayName;
 
 import com.howtoprogram.junit5.ObservablePractice.FizzBuzz;
 
+import io.reactivex.Observable;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class FizzBuzzTest {
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	@DisplayName("Testea el mi FizzBuzz")
 	public void testFizzBuzz() {
-		String [] colectRang15= {"1","2","Fizz","4","Buzz",
-				           "Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"};
+		String [] colectRang15= {"1","2","FIZZ","4","BUZZ",
+				           "FIZZ","7","8","FIZZ","BUZZ","11","FIZZ","13","14","FIZZBUZZ"};
+        List colection15= Arrays.asList(colectRang15); 
 		
-		String [] colectRang20= {"1","2","Fizz","4","Buzz",
-		           "Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz","16",
-		           "17","18","19","Buzz"};
+		String [] colectRang20= {"1","2","FIZZ","4","BUZZ",
+		           "FIZZ","7","8","FIZZ","BUZZ","11","FIZZ","13","14","FIZZBUZZ","16",
+		           "17","FIZZ","19","BUZZ"};
+		List colection20= Arrays.asList(colectRang20);
 		
-		FizzBuzz fb = mock(FizzBuzz.class);
-		 when(fb.fizzBuzz(15)).thenReturn(colectRang15);
-		 assertEquals(colectRang15, fb.fizzBuzz(15));
+		
+		 FizzBuzz fb=new FizzBuzz();
+		 assertEquals(colection15,fb.fizzBuzz(1,15));
+		 Observable.fromArray(fb.fizzBuzz(1,15)).subscribe(x -> System.out.println(x));
 		 
-		 when(fb.fizzBuzz(20)).thenReturn(colectRang20);
-		 assertEquals(colectRang20, fb.fizzBuzz(20));
+		assertEquals(colection20, fb.fizzBuzz(1,20));
+		Observable.fromArray(fb.fizzBuzz(1,20)).subscribe(x -> System.out.println(x));
 	}
 	
-	@Test
-	public void Prueba() {
-		String [] colectRang20= {"1","2","Fizz","4","Buzz",
-		           "Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","Fizz","16",
-		           "17","Fizz","19","Buzz"};
-		FizzBuzz fizzBuzz = new FizzBuzz();
-		String[] res = fizzBuzz.fizzBuzz(20);
-		assertArrayEquals(colectRang20, res);
-	}
-
 }
